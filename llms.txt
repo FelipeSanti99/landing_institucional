@@ -5,9 +5,9 @@
 ## Páginas principales
 
 - [Inicio](https://finanflix.com/): Qué es la suscripción, qué incluye, precios y mes gratis.
-- [Programas avanzados](https://finanflix.com/programas-avanzados): Cohortes premium (Trading, Fundamental, Mercados) fuera de la suscripción, coordinadas por WhatsApp.
-- [Quiénes somos](https://finanflix.com/nosotros): El equipo, misión, visión y formación.
-- [Preguntas frecuentes](https://finanflix.com/faq): Mes gratis, qué incluye, pagos, cancelación y aviso de riesgo.
+- [Programas avanzados](https://finanflix.com/programas-avanzados.html): Cohortes premium (Trading, Fundamental, Mercados) fuera de la suscripción, coordinadas por WhatsApp.
+- [Quiénes somos](https://finanflix.com/nosotros.html): El equipo, misión, visión y formación.
+- [Preguntas frecuentes](https://finanflix.com/faq.html): Mes gratis, qué incluye, pagos, cancelación y aviso de riesgo.
 
 ## Suscripción
 

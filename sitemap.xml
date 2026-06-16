@@ -7,19 +7,19 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://finanflix.com/programas-avanzados</loc>
+    <loc>https://finanflix.com/programas-avanzados.html</loc>
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://finanflix.com/nosotros</loc>
+    <loc>https://finanflix.com/nosotros.html</loc>
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://finanflix.com/faq</loc>
+    <loc>https://finanflix.com/faq.html</loc>
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
