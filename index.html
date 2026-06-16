@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a0e" />
+
+  <title>Finanflix — Aprendé a invertir con método</title>
+  <meta name="description" content="Escuela de finanzas e inversión: crypto, acciones y bonos, enseñados por un equipo que gestiona capital. Clases en vivo, programas y comunidad. Primer mes gratis." />
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <link rel="canonical" href="https://finanflix.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Finanflix" />
+  <meta property="og:title" content="Finanflix — Aprendé a invertir con método" />
+  <meta property="og:description" content="Acceso completo a clases en vivo, programas y comunidad. Gratis el primer mes." />
+  <meta property="og:url" content="https://finanflix.com/" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Space Grotesk como sustituto del Sharp Grotesk del toolkit. Inter solo para body suelto. -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Paleta del toolkit oficial
+            ink: { 950:'#06060a', 900:'#0a0a0e', 800:'#15151a', 700:'#1f1f26', 600:'#2a2a33' },
+            violet: {
+              400:'#7d4ae3',
+              500:'#6029e0',
+              600:'#5b2bd9', // PRIMARIO violeta del toolkit
+              700:'#4818c0',
+              800:'#3a13a0',
+            },
+            flame: {
+              400:'#ff7a3d',
+              500:'#ff5a1a',
+              600:'#ff4e00', // PRIMARIO naranja del toolkit
+              700:'#d63e00',
+              800:'#a02f00',
+            },
+            bone: '#efece4', // crema del toolkit
+            steel: '#d9d9d9',
+          },
+          fontFamily: {
+            // Una sola familia, tipo Sharp Grotesk. Inter solo si lo necesitamos para algún copy chico.
+            sans: ['"Space Grotesk"','system-ui','sans-serif'],
+            display: ['"Space Grotesk"','system-ui','sans-serif'],
+            body: ['Inter','"Space Grotesk"','system-ui','sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root { color-scheme: dark; }
+    /* Transiciones de página nativas (cross-document). Navegadores sin soporte lo ignoran. */
+    @view-transition { navigation: auto; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Space Grotesk', system-ui, sans-serif; }
+
+    /* Tipografía display estilo Sharp Grotesk: pesado, condensado en tracking */
+    .h-display {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 0.92;
+      text-transform: uppercase;
+    }
+    .h-section {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+    }
+    .eyebrow {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+    }
+
+    /* Bloques de color sólido — guiño al toolkit. NO usar gradientes purple→pink→orange genéricos. */
+    .block-violet { background: #5b2bd9; }
+    .block-flame { background: #ff4e00; }
+    .block-ink { background: #0a0a0e; }
+    .block-bone { background: #efece4; }
+
+    /* Línea tipo blueprint del toolkit */
+    .rule { height: 1px; background: rgba(255,255,255,0.15); }
+    .rule-dark { height: 1px; background: rgba(0,0,0,0.18); }
+
+    /* Outline button feel del toolkit */
+    .btn-outline-light {
+      border: 1.5px solid currentColor;
+      transition: background 200ms ease-out, color 200ms ease-out;
+    }
+    .btn-outline-light:hover { background: currentColor; color: #0a0a0e; }
+
+    /* Acento subrayado tipo "tachado naranja" del título "BRAND TOOLKIT" */
+    .strike-flame {
+      position: relative;
+      display: inline-block;
+    }
+    .strike-flame::after {
+      content: "";
+      position: absolute;
+      left: -4%; right: -4%; top: 50%;
+      height: 0.18em;
+      background: #ff4e00;
+      transform: translateY(-50%) rotate(-4deg);
+      z-index: 1;
+    }
+    .strike-flame > * { position: relative; z-index: 2; }
+
+    /* Marca del logotipo "F" del toolkit: stencil con pixel naranja */
+    .mark-f { position: relative; display: inline-block; }
+    .mark-f::after {
+      content: "";
+      position: absolute;
+      right: 6%; top: 38%;
+      width: 22%; height: 11%;
+      background: #ff4e00;
+    }
+
+    /* No outline azul fea, sí accesible */
+    :focus-visible { outline: 2px solid #ff4e00; outline-offset: 3px; border-radius: 4px; }
+
+    /* Selección */
+    ::selection { background: #ff4e00; color: #fff; }
+
+    /* Sin scroll horizontal en mobile, sin romper sticky */
+    html, body { overflow-x: clip; }
+
+    /* Padding inferior en mobile para que el sticky CTA no tape contenido */
+    @media (max-width: 767px) {
+      body { padding-bottom: 76px; }
+    }
+
+    /* Detalles tipográficos: el squint test favorece grandes contrastes de tamaño */
+    h1, h2, h3 { letter-spacing: -0.025em; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Finanflix",
+    "url": "https://finanflix.com",
+    "logo": "https://finanflix.com/og-image.jpg",
+    "foundingDate": "2021",
+    "description": "Plataforma de educación financiera y crypto. Clases en vivo, programas y comunidad. Equipo formado en Harvard, Chicago Booth, CFA, UCEMA, ITBA, Politecnico di Milano, Universidad Austral y UBA.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressCountry": "AR" },
+    "sameAs": [
+      "https://x.com/finanflix",
+      "https://www.youtube.com/@FINANFLIX",
+      "https://www.instagram.com/finanflix.ok/",
+      "https://www.linkedin.com/company/finanflix/posts/?feedView=all"
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "name": "Suscripción Finanflix — Mensual",
+        "description": "Acceso completo a clases en vivo, +20 programas y comunidad. Primer mes gratis.",
+        "price": "42000",
+        "priceCurrency": "ARS",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "42000",
+          "priceCurrency": "ARS",
+          "billingDuration": "P1M",
+          "unitText": "mes"
+        },
+        "eligibleDuration": { "@type": "QuantitativeValue", "value": "30", "unitCode": "DAY" }
+      },
+      {
+        "@type": "Offer",
+        "name": "Suscripción Finanflix — Anual",
+        "description": "Acceso completo durante 12 meses pagando solo 9. Primer mes gratis.",
+        "price": "378000",
+        "priceCurrency": "ARS",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "378000",
+          "priceCurrency": "ARS",
+          "billingDuration": "P1Y",
+          "unitText": "año"
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+
+<body class="bg-ink-900 text-white antialiased">
+
+  <!-- ============================ TOP BAR SLIM (desktop) ============================ -->
+  <div id="topbar" class="hidden md:block block-flame relative z-40">
+    <div class="mx-auto max-w-[1400px] px-5 lg:px-12 py-2 flex items-center justify-center gap-4 text-sm">
+      <span class="eyebrow text-white">★ Probá Finanflix 30 días gratis</span>
+      <a href="https://plataforma.finanflix.com/suscripcion/677d75c405c9c730be7de3ba?type=basic&amp;step=billing&amp;ref=24" class="font-semibold text-white underline underline-offset-2 hover:no-underline">
+        Empezar ahora →
+      </a>
+      <button
+        type="button"
+        aria-label="Cerrar barra"
+        class="absolute right-4 inline-flex h-6 w-6 items-center justify-center text-white/80 hover:text-white"
+        onclick="document.getElementById('topbar').remove()"
+      >
+        <svg viewBox="0 0 20 20" fill="currentColor" class="h-3.5 w-3.5" aria-hidden="true">
+          <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 0 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================ NAVBAR ============================ -->
+  <header class="sticky top-0 z-30 bg-ink-900/90 backdrop-blur-sm border-b border-white/5">
+    <nav class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12 h-16 flex items-center justify-between" aria-label="Principal">
+      <a href="/" class="flex items-center gap-2.5">
+        <!-- Logo F del toolkit -->
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-md block-violet relative">
+          <span class="h-display text-white text-lg leading-none mark-f">F</span>
+        </span>
+        <span class="font-display font-bold text-base tracking-tight">FINANFLIX</span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-1 text-sm">
+        <li><a href="#suscripcion" class="px-3 py-2 text-white/70 hover:text-white">Suscripción</a></li>
+        <li><a href="/programas-avanzados" class="px-3 py-2 text-white/70 hover:text-white">Programas avanzados</a></li>
+        <li><a href="/nosotros" class="px-3 py-2 text-white/70 hover:text-white">Quiénes somos</a></li>
+        <li><a href="/faq" class="px-3 py-2 text-white/70 hover:text-white">Preguntas</a></li>
+      </ul>
+
+      <div class="flex items-center gap-2">
+        <a href="https://plataforma.finanflix.com" class="hidden lg:inline-flex items-center px-3 py-2 text-sm text-white/70 hover:text-white">Iniciar sesión</a>
+        <a href="https://plataforma.finanflix.com/suscripcion/677d75c405c9c730be7de3ba?type=basic&amp;step=billing&amp;ref=24" class="inline-flex items-center px-4 py-2 text-sm font-semibold text-white block-flame hover:brightness-110 transition">
+          Empezar gratis
+        </a>
+        <button
+          type="button"
+          class="md:hidden inline-flex h-10 w-10 items-center justify-center hover:bg-white/5"
+          aria-label="Abrir menú"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          onclick="const m=document.getElementById('mobile-menu'); const o=m.classList.toggle('hidden'); this.setAttribute('aria-expanded', String(!o));"
+        >
+          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="md:hidden hidden border-t border-white/5 bg-ink-900">
+      <div class="px-5 py-4 flex flex-col gap-1" onclick="if(event.target.tagName==='A'){document.getElementById('mobile-menu').classList.add('hidden'); document.querySelector('[aria-controls=mobile-menu]').setAttribute('aria-expanded','false');}">
+        <a href="#suscripcion" class="px-3 py-3 hover:bg-white/5">Suscripción</a>
+        <a href="/programas-avanzados" class="px-3 py-3 hover:bg-white/5">Programas avanzados</a>
+        <a href="/nosotros" class="px-3 py-3 hover:bg-white/5">Quiénes somos</a>
+        <a href="/faq" class="px-3 py-3 hover:bg-white/5">Preguntas</a>
+        <a href="https://plataforma.finanflix.com" class="px-3 py-3 hover:bg-white/5">Iniciar sesión</a>
+        <a href="https://plataforma.finanflix.com/suscripcion/677d75c405c9c730be7de3ba?type=basic&amp;step=billing&amp;ref=24" class="mt-2 px-4 py-3 text-center font-semibold text-white block-flame">Empezar mi mes gratis</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================ HERO ============================ -->
+  <!--
+    Hero estilo toolkit: bloque violeta sólido con tipografía display gigante.
+    Un solo CTA primario, un secundario ghost. Sin pseudo-dashboard ni halos de IA.
+  -->
+  <section class="relative block-violet overflow-hidden">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12 py-20 sm:py-28 lg:py-32 relative">
+      <!-- Eyebrow -->
+      <p class="eyebrow text-white/70">
+        Primer mes gratis · sin compromiso
+      </p>
+
+      <h1 class="mt-6 h-display text-white text-[clamp(2.6rem,9vw,7.5rem)]">
+        Aprendé a invertir<br/>
+        con <span class="text-flame-500">método.</span>
+      </h1>
+
+      <p class="mt-8 max-w-2xl text-white/85 font-body text-lg sm:text-xl leading-relaxed">
+        Crypto, acciones y bonos, enseñados por un equipo que gestiona capital. Clases en vivo, programas y comunidad.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row gap-3">
+        <a href="https://plataforma.finanflix.com/suscripcion/677d75c405c9c730be7de3ba?type=basic&amp;step=billing&amp;ref=24" class="inline-flex items-center justify-center px-7 py-4 text-base font-semibold text-white block-flame hover:brightness-110 transition">
+          Empezá tu mes gratis
+          <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 ml-2" aria-hidden="true"><path d="M10.293 3.293a1 1 0 0 1 1.414 0l5 5a1 1 0 0 1 0 1.414l-5 5a1 1 0 1 1-1.414-1.414L13.586 10H4a1 1 0 1 1 0-2h9.586l-3.293-3.293a1 1 0 0 1 0-1.414Z"/></svg>
+        </a>
+        <a href="#suscripcion" class="btn-outline-light inline-flex items-center justify-center px-7 py-4 text-base font-semibold text-white">
+          ¿Qué incluye?
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================ QUIÉNES SOMOS (resumen) ============================ -->
+  <!--
+    Versión corta. El detalle del equipo (con fotos y credenciales) vive en nosotros.html.
+  -->
+  <section id="nosotros" class="block-ink relative">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12 py-20 sm:py-28">
+      <div class="grid lg:grid-cols-12 gap-x-12 gap-y-10 items-start">
+        <div class="lg:col-span-7">
+          <p class="eyebrow text-flame-600">Quiénes somos</p>
+          <h2 class="mt-5 h-section text-white text-[clamp(2rem,6vw,4.5rem)]">
+            Una escuela de finanzas y crypto<br/>
+            <span class="text-violet-400">construida</span> por gestores de capital.
+          </h2>
+          <p class="mt-8 font-body text-white/80 text-lg leading-relaxed max-w-2xl">
+            Finanflix nació en 2021 con una idea simple: enseñar a invertir en crypto sin humo,
+            con la misma metodología con la que el equipo gestiona capital.
+          </p>
+          <p class="mt-4 font-body text-white/70 text-base leading-relaxed max-w-2xl">
+            Detrás de la plataforma hay un equipo con formación en
+            <strong class="text-white">Harvard</strong>,
+            <strong class="text-white">Chicago Booth</strong>,
+            <strong class="text-white">CFA</strong>,
+            <strong class="text-white">UCEMA</strong>,
+            <strong class="text-white">Politecnico di Milano</strong>,
+            <strong class="text-white">ITBA</strong>,
+            <strong class="text-white">UBA</strong> y
+            <strong class="text-white">Universidad Austral</strong>.
+          </p>
+
+          <div class="mt-10 flex flex-col sm:flex-row gap-3">
+            <a href="/nosotros" class="inline-flex items-center justify-center px-6 py-3 font-semibold text-white border-2 border-white hover:bg-white hover:text-ink-900 transition">
+              Conocé al equipo
+              <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 ml-2" aria-hidden="true"><path d="M10.293 3.293a1 1 0 0 1 1.414 0l5 5a1 1 0 0 1 0 1.414l-5 5a1 1 0 1 1-1.414-1.414L13.586 10H4a1 1 0 1 1 0-2h9.586l-3.293-3.293a1 1 0 0 1 0-1.414Z"/></svg>
+            </a>
+            <a href="https://plataforma.finanflix.com/suscripcion/677d75c405c9c730be7de3ba?type=basic&amp;step=billing&amp;ref=24" class="inline-flex items-center justify-center px-6 py-3 font-semibold text-white block-flame hover:brightness-110 transition">
+              Empezar mi mes gratis
+            </a>
+          </div>
+        </div>
+
+        <!-- Instituciones del equipo, formato blueprint compacto -->
+        <div class="lg:col-span-5">
+          <p class="eyebrow text-white/40">Formación del equipo</p>
+          <div class="mt-5 grid grid-cols-2 gap-px bg-white/10">
+            <div class="block-ink px-4 py-4 text-sm font-body text-white/80">Harvard <span class="text-white/40">Exec.</span></div>
+            <div class="block-ink px-4 py-4 text-sm font-body text-white/80">Chicago Booth</div>
+            <div class="block-ink px-4 py-4 text-sm font-body text-white/80">CFA Institute</div>
+            <div class="block-ink px-4 py-4 text-sm font-body text-white/80">UCEMA</div>
+            <div class="block-ink px-4 py-4 text-sm font-body text-white/80">U. Austral</div>
+            <div class="block-ink px-4 py-4 text-sm font-body text-white/80">UBA</div>
+            <div class="block-ink px-4 py-4 text-sm font-body text-white/80">ITBA</div>
+            <div class="block-ink px-4 py-4 text-sm font-body text-white/80">Politecnico Milano</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SUSCRIPCIÓN ============================ -->
+  <!--
+    Sección bloque naranja con texto display gigante (estilo "BIENVENIDX A NUESTRO MUNDO" del toolkit).
+  -->
+  <section id="suscripcion" class="block-flame relative overflow-hidden">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12 py-20 sm:py-28">
+      <p class="eyebrow text-white/80">La suscripción Finanflix</p>
+
+      <h2 class="mt-5 h-display text-white text-[clamp(2.4rem,8vw,6rem)]">
+        Un plan.<br/>
+        Toda la <span class="text-violet-600">plataforma</span> adentro.
+      </h2>
+
+      <p class="mt-8 max-w-2xl font-body text-white/95 text-lg sm:text-xl leading-relaxed">
+        No vendemos programas sueltos. Pagás una sola cuota y entrás a todo:
+        clases en vivo, los 8 programas completos, informes y la comunidad.
+      </p>
+
+      <!-- 4 pilares, fila plana sin cards de sombra -->
+      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 border-t border-white/25 pt-10">
+        <div>
+          <div class="flex items-baseline gap-3">
+            <span class="h-display text-white/50 text-3xl">01</span>
+            <p class="eyebrow text-white">En vivo</p>
+          </div>
+          <p class="mt-3 h-section text-white text-2xl">4 clases por semana</p>
+          <p class="mt-2 font-body text-white/85 text-sm leading-relaxed">
+            Análisis del mercado en vivo lunes, martes, miércoles y jueves. Si no podés conectarte, queda grabado.
+          </p>
+        </div>
+        <div>
+          <div class="flex items-baseline gap-3">
+            <span class="h-display text-white/50 text-3xl">02</span>
+            <p class="eyebrow text-white">Programas</p>
+          </div>
+          <p class="mt-3 h-section text-white text-2xl">8 programas + informes</p>
+          <p class="mt-2 font-body text-white/85 text-sm leading-relaxed">
+            Trading, análisis técnico, fundamental, DeFi, sistema bancario, mindset y más. A tu ritmo.
+          </p>
+        </div>
+        <div>
+          <div class="flex items-baseline gap-3">
+            <span class="h-display text-white/50 text-3xl">03</span>
+            <p class="eyebrow text-white">Comunidad</p>
+          </div>
+          <p class="mt-3 h-section text-white text-2xl">Discord activo</p>
+          <p class="mt-2 font-body text-white/85 text-sm leading-relaxed">
+            Canales por nivel. El equipo entra a responder todos los días.
+          </p>
+        </div>
+        <div>
+          <div class="flex items-baseline gap-3">
+            <span class="h-display text-white/50 text-3xl">04</span>
+            <p class="eyebrow text-white">Updates</p>
+          </div>
+          <p class="mt-3 h-section text-white text-2xl">Contenido nuevo</p>
+          <p class="mt-2 font-body text-white/85 text-sm leading-relaxed">
+            Sumamos clases y programas todos los meses. Ya pagado.
+          </p>
+        </div>
+      </div>
+
+      <!-- Lista completa de beneficios: lo que entra exactamente en la suscripción + mes gratis -->
+      <div class="mt-16 border-t border-white/25 pt-10">
+        <div class="flex items-end justify-between flex-wrap gap-4">
+          <div>
+            <p class="eyebrow text-white/80">Todo lo que incluye</p>
+            <p class="mt-3 h-section text-white text-2xl sm:text-3xl max-w-2xl">
+              Pagás una vez. Entra todo esto, también durante el mes gratis.
+            </p>
+          </div>
+        </div>
+
+        <ul class="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-3 font-body text-white/95">
+          <li class="flex gap-3 py-2 border-b border-white/15 sm:col-span-2">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" class="h-5 w-5 mt-0.5 shrink-0 text-white" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong class="text-white">Clases de análisis semanales en vivo:</strong> lunes, martes, miércoles y jueves. Quedan grabadas.</span>
+          </li>
+          <li class="flex gap-3 py-2 border-b border-white/15">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" class="h-5 w-5 mt-0.5 shrink-0 text-white" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Programa inicial de DeFi (finanzas descentralizadas).</span>
+          </li>
+          <li class="flex gap-3 py-2 border-b border-white/15">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" class="h-5 w-5 mt-0.5 shrink-0 text-white" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Programa sobre cómo funciona el sistema bancario.</span>
+          </li>
+          <li class="flex gap-3 py-2 border-b border-white/15">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" class="h-5 w-5 mt-0.5 shrink-0 text-white" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Programa de criptomonedas, blockchain y sus tipos.</span>
+          </li>
+          <li class="flex gap-3 py-2 border-b border-white/15">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" class="h-5 w-5 mt-0.5 shrink-0 text-white" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Programa inicial de análisis técnico.</span>
+          </li>
+          <li class="flex gap-3 py-2 border-b border-white/15">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" class="h-5 w-5 mt-0.5 shrink-0 text-white" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Programa inicial de trading.</span>
+          </li>
+          <li class="flex gap-3 py-2 border-b border-white/15">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" class="h-5 w-5 mt-0.5 shrink-0 text-white" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Programa inicial de análisis fundamental.</span>
+          </li>
+          <li class="flex gap-3 py-2 border-b border-white/15">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" class="h-5 w-5 mt-0.5 shrink-0 text-white" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Bootcamp intensivo de mindset.</span>
+          </li>
+          <li class="flex gap-3 py-2 border-b border-white/15">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" class="h-5 w-5 mt-0.5 shrink-0 text-white" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Programa de cómo comprar criptomonedas y dónde atesorarlas.</span>
+          </li>
+          <li class="flex gap-3 py-2 border-b border-white/15 sm:col-span-2">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" class="h-5 w-5 mt-0.5 shrink-0 text-white" aria-hidden="true"><path d="M4 10l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong class="text-white">Informes</strong> periódicos del equipo sobre oportunidades y eventos críticos del mercado.</span>
+          </li>
+        </ul>
+
+        <p class="mt-6 font-body text-sm text-white/75">
+          ¿Buscás programas más avanzados (Trading Pro, Análisis Fundamental 2.0, Stonks Prime…)?
+          <a href="/programas-avanzados" class="underline underline-offset-2 font-semibold hover:no-underline">Mirá los programas avanzados →</a>
+        </p>
+      </div>
+
+      <!-- Precio: dos cards lado a lado (mensual / anual) -->
+      <div class="mt-20 border-t border-white/25 pt-10">
+        <div class="flex items-end justify-between gap-4 flex-wrap">
+          <p class="eyebrow text-white/80">Precio</p>
+          <p class="text-xs text-white/70 font-body">★ Primer mes gratis en cualquier plan</p>
+        </div>
+
+        <div class="mt-6 grid md:grid-cols-2 gap-px bg-white/15">
+          <!-- Plan Mensual -->
+          <article class="block-ink p-7 sm:p-9 flex flex-col">
+            <div class="flex items-center justify-between">
+              <p class="h-section text-white text-2xl">Mensual</p>
+              <span class="text-xs text-white/40 uppercase tracking-widest">Flexibilidad total</span>
+            </div>
+
+            <div class="mt-8">
+              <p class="eyebrow text-white/50">Pesos argentinos (ARS)</p>
+              <p class="mt-2 h-display text-white text-[clamp(2.4rem,6vw,4rem)] leading-none">
+                AR$42.000<span class="text-white/40 font-display text-2xl sm:text-3xl">/mes</span>
+              </p>
+              <p class="mt-4 eyebrow text-white/50">Precio referencial (USD)</p>
+              <p class="mt-1 font-body text-white/70 text-sm">US$30,00 / mes</p>
+            </div>
+
+            <ul class="mt-8 space-y-2 text-sm text-white/80 font-body">
+              <li class="flex gap-2"><span class="text-flame-500 mt-0.5">✓</span> Acceso completo a la plataforma</li>
+              <li class="flex gap-2"><span class="text-flame-500 mt-0.5">✓</span> Cancelás cuando quieras</li>
+              <li class="flex gap-2"><span class="text-flame-500 mt-0.5">✓</span> Primer mes gratis</li>
+            </ul>
+
+            <a href="https://plataforma.finanflix.com/suscripcion/677d75c405c9c730be7de3ba?type=basic&amp;step=billing&amp;ref=24" class="mt-auto pt-8">
+              <span class="inline-flex w-full items-center justify-center px-6 py-3.5 font-semibold text-white border-2 border-white hover:bg-white hover:text-ink-900 transition">
+                Empezar plan mensual
+              </span>
+            </a>
+          </article>
+
+          <!-- Plan Anual destacado -->
+          <article class="block-ink p-7 sm:p-9 flex flex-col relative">
+            <span class="absolute top-0 right-0 block-flame px-3 py-1.5 text-[10px] font-bold text-white tracking-widest uppercase">
+              ★ 3 meses bonificados
+            </span>
+
+            <div class="flex items-center justify-between">
+              <p class="h-section text-white text-2xl">Anual</p>
+              <span class="text-xs text-flame-500 uppercase tracking-widest font-semibold">Ahorrás 25%</span>
+            </div>
+
+            <div class="mt-8">
+              <p class="eyebrow text-white/50">Pesos argentinos (ARS)</p>
+              <p class="mt-2 h-display text-white text-[clamp(2.4rem,6vw,4rem)] leading-none">
+                AR$378.000<span class="text-white/40 font-display text-2xl sm:text-3xl">/año</span>
+              </p>
+              <p class="mt-4 eyebrow text-white/50">Precio referencial (USD)</p>
+              <p class="mt-1 font-body text-white/70 text-sm">US$270,00 / año</p>
+            </div>
+
+            <ul class="mt-8 space-y-2 text-sm text-white/90 font-body">
+              <li class="flex gap-2"><span class="text-flame-500 mt-0.5">✓</span> Todo lo del plan mensual</li>
+              <li class="flex gap-2"><span class="text-flame-500 mt-0.5">✓</span> Pagás 9 meses, accedés 12</li>
+              <li class="flex gap-2"><span class="text-flame-500 mt-0.5">✓</span> Acceso prioritario a contenido nuevo</li>
+            </ul>
+
+            <a href="https://plataforma.finanflix.com/suscripcion/677d75c405c9c730be7de3ba?type=basic&amp;step=billing&amp;ref=24" class="mt-auto pt-8">
+              <span class="inline-flex w-full items-center justify-center px-6 py-3.5 font-semibold text-white block-flame hover:brightness-110 transition">
+                Empezar plan anual
+              </span>
+            </a>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PROFITLAND (prueba social) ============================ -->
+  <!--
+    Bloque violeta. Mockup tipo Discord channel donde los alumnos suben
+    capturas de sus ganancias. Es prueba social real, no testimonios placeholder.
+  -->
+  <section id="profitland" class="block-violet relative overflow-hidden">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12 py-20 sm:py-28">
+      <div class="grid lg:grid-cols-12 gap-x-12 gap-y-12 items-start">
+        <div class="lg:col-span-5">
+          <p class="eyebrow text-flame-500">Profitland · canal del Discord</p>
+          <h2 class="mt-5 h-display text-white text-[clamp(2.4rem,7vw,5.5rem)]">
+            Los alumnos<br/>
+            ya están <span class="text-flame-500">ganando.</span>
+          </h2>
+          <p class="mt-8 font-body text-white/85 text-lg leading-relaxed max-w-md">
+            Profitland es el canal de la comunidad donde los alumnos suben sus operaciones cerradas.
+            Lo que se ve acá lo postearon ellos, no lo armamos nosotros.
+          </p>
+          <div class="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-white/20 pt-6 max-w-md">
+            <div>
+              <p class="h-section text-white text-3xl">+1.200</p>
+              <p class="mt-1 text-xs text-white/70 uppercase tracking-widest">profits compartidos</p>
+            </div>
+            <div>
+              <p class="h-section text-white text-3xl">24/7</p>
+              <p class="mt-1 text-xs text-white/70 uppercase tracking-widest">canal activo</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mockup del canal Discord -->
+        <div class="lg:col-span-7">
+          <div class="block-ink p-5 sm:p-6 border border-white/10">
+            <!-- Header del canal -->
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+              <div class="flex items-center gap-3">
+                <span class="text-white/40 font-mono text-sm">#</span>
+                <span class="font-display font-bold text-white">profitland</span>
+                <span class="hidden sm:inline text-xs text-white/40 font-body">— donde los alumnos cierran números</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <span class="relative flex h-2 w-2">
+                  <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-60 animate-ping"></span>
+                  <span class="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
+                </span>
+                <span class="text-white/60 font-body">en vivo</span>
+              </div>
+            </div>
+
+            <!-- Mensajes -->
+            <ul class="mt-5 space-y-5">
+              <li class="flex gap-3">
+                <span class="h-10 w-10 shrink-0 rounded-full block-flame inline-flex items-center justify-center font-display font-bold text-white">M</span>
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-baseline gap-2 flex-wrap">
+                    <span class="font-semibold text-white">martin_g</span>
+                    <span class="text-xs text-white/40 font-body">hoy a las 14:22</span>
+                  </div>
+                  <p class="mt-1 font-body text-white/85 text-sm leading-relaxed">
+                    Cerré la operación de SOL que armamos en la clase del martes. <span class="text-green-400 font-semibold">+18,4%</span> en 9 días 🟢
+                  </p>
+                </div>
+              </li>
+              <li class="flex gap-3">
+                <span class="h-10 w-10 shrink-0 rounded-full bg-violet-700 inline-flex items-center justify-center font-display font-bold text-white">S</span>
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-baseline gap-2 flex-wrap">
+                    <span class="font-semibold text-white">sofiar.ok</span>
+                    <span class="text-xs text-white/40 font-body">hoy a las 11:08</span>
+                  </div>
+                  <p class="mt-1 font-body text-white/85 text-sm leading-relaxed">
+                    Primer profit con el framework de gestión de riesgo. Tamaño chico pero el sistema funcionó. <span class="text-green-400 font-semibold">+6,2%</span>
+                  </p>
+                </div>
+              </li>
+              <li class="flex gap-3">
+                <span class="h-10 w-10 shrink-0 rounded-full bg-flame-600 inline-flex items-center justify-center font-display font-bold text-white">D</span>
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-baseline gap-2 flex-wrap">
+                    <span class="font-semibold text-white">diego_f</span>
+                    <span class="text-xs text-white/40 font-body">ayer a las 22:41</span>
+                  </div>
+                  <p class="mt-1 font-body text-white/85 text-sm leading-relaxed">
+                    Airdrop de Hyperliquid claimeado siguiendo la guía. <span class="text-green-400 font-semibold">+$2.140 USD</span> 🪂
+                  </p>
+                </div>
+              </li>
+              <li class="flex gap-3">
+                <span class="h-10 w-10 shrink-0 rounded-full bg-violet-500 inline-flex items-center justify-center font-display font-bold text-white">C</span>
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-baseline gap-2 flex-wrap">
+                    <span class="font-semibold text-white">cami.p</span>
+                    <span class="text-xs text-white/40 font-body">ayer a las 18:13</span>
+                  </div>
+                  <p class="mt-1 font-body text-white/85 text-sm leading-relaxed">
+                    Cerré la posición de ETH del análisis de la semana pasada. <span class="text-green-400 font-semibold">+11,7%</span>. Gracias equipo 🙌
+                  </p>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Input falso -->
+            <div class="mt-6 pt-4 border-t border-white/10">
+              <div class="flex items-center gap-2 text-sm text-white/40 font-body">
+                <span aria-hidden="true">+</span>
+                <span>Mensaje en #profitland</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-4 text-xs text-white/50 font-body">
+            Capturas representativas. Resultados pasados de alumnos, no garantizan rendimientos futuros.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col sm:flex-row gap-3">
+        <a href="https://plataforma.finanflix.com/suscripcion/677d75c405c9c730be7de3ba?type=basic&amp;step=billing&amp;ref=24" class="inline-flex items-center justify-center px-7 py-4 text-base font-semibold text-white block-flame hover:brightness-110 transition">
+          Quiero entrar a Profitland
+          <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 ml-2" aria-hidden="true"><path d="M10.293 3.293a1 1 0 0 1 1.414 0l5 5a1 1 0 0 1 0 1.414l-5 5a1 1 0 1 1-1.414-1.414L13.586 10H4a1 1 0 1 1 0-2h9.586l-3.293-3.293a1 1 0 0 1 0-1.414Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CTA MES GRATIS ============================ -->
+  <!-- Bloque violeta + naranja, estilo "BIENVENIDX A NUESTRO MUNDO" del toolkit -->
+  <section id="mes-gratis" class="block-flame relative overflow-hidden">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12 py-24 sm:py-32 lg:py-40 relative">
+      <p class="eyebrow text-white/80">Empezá ahora</p>
+
+      <h2 class="mt-6 h-display text-white text-[clamp(3rem,11vw,9rem)]">
+        Tu mes<br/>
+        gratis <span class="text-violet-600">arranca</span><br/>
+        ahora.
+      </h2>
+
+      <p class="mt-10 max-w-2xl font-body text-white/95 text-lg sm:text-xl">
+        Acceso completo a la plataforma desde el minuto uno.
+        Cancelás cuando quieras.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row gap-3">
+        <a href="https://plataforma.finanflix.com/suscripcion/677d75c405c9c730be7de3ba?type=basic&amp;step=billing&amp;ref=24" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white block-ink hover:brightness-125 transition">
+          Crear mi cuenta gratis
+          <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 ml-2" aria-hidden="true"><path d="M10.293 3.293a1 1 0 0 1 1.414 0l5 5a1 1 0 0 1 0 1.414l-5 5a1 1 0 1 1-1.414-1.414L13.586 10H4a1 1 0 1 1 0-2h9.586l-3.293-3.293a1 1 0 0 1 0-1.414Z"/></svg>
+        </a>
+        <a href="#suscripcion" class="btn-outline-light inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white">
+          Ver qué incluye
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="block-ink border-t border-white/10">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12 py-14">
+      <div class="grid md:grid-cols-12 gap-10 items-start">
+        <div class="md:col-span-5">
+          <div class="flex items-center gap-2.5">
+            <span class="inline-flex h-9 w-9 items-center justify-center rounded-md block-violet relative">
+              <span class="h-display text-white text-lg leading-none mark-f">F</span>
+            </span>
+            <span class="font-display font-bold text-base tracking-tight">FINANFLIX</span>
+          </div>
+          <p class="mt-4 font-body text-sm text-white/55 max-w-sm">
+            Educación financiera y crypto. Desde 2021 en Buenos Aires, Argentina.
+          </p>
+        </div>
+
+        <nav class="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-6 text-sm" aria-label="Pie">
+          <div>
+            <p class="eyebrow text-white/50">Producto</p>
+            <ul class="mt-4 space-y-2.5 text-white/75 font-body">
+              <li><a class="hover:text-white" href="#suscripcion">Suscripción</a></li>
+              <li><a class="hover:text-white" href="/programas-avanzados">Programas avanzados</a></li>
+              <li><a class="hover:text-white" href="/nosotros">Quiénes somos</a></li>
+              <li><a class="hover:text-white" href="/faq">Preguntas</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="eyebrow text-white/50">Cuenta</p>
+            <ul class="mt-4 space-y-2.5 text-white/75 font-body">
+              <li><a class="hover:text-white" href="https://plataforma.finanflix.com">Iniciar sesión</a></li>
+              <li><a class="hover:text-white" href="https://plataforma.finanflix.com/registro">Crear cuenta</a></li>
+              <li><a class="hover:text-white" href="/contacto">Contacto</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="eyebrow text-white/50">Legal</p>
+            <ul class="mt-4 space-y-2.5 text-white/75 font-body">
+              <li><a class="hover:text-white" href="/terminos">Términos</a></li>
+              <li><a class="hover:text-white" href="/privacidad">Privacidad</a></li>
+              <li><a class="hover:text-white" href="/aviso-de-riesgo">Aviso de riesgo</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-white/50 font-body">
+        <p>© <span id="year">2026</span> Finanflix S.R.L. · Buenos Aires, Argentina</p>
+        <div class="flex items-center gap-2">
+          <a aria-label="X" href="https://x.com/finanflix" class="h-9 w-9 inline-flex items-center justify-center border border-white/15 hover:border-flame-600 hover:text-flame-600 transition">
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="currentColor" aria-hidden="true"><path d="M18.244 2H21l-6.52 7.45L22 22h-6.828l-4.78-6.243L4.8 22H2.045l6.974-7.97L2 2h6.914l4.32 5.71L18.244 2Zm-1.196 18h1.61L7.04 4H5.34l11.708 16Z"/></svg>
+          </a>
+          <a aria-label="YouTube" href="https://www.youtube.com/@FINANFLIX" class="h-9 w-9 inline-flex items-center justify-center border border-white/15 hover:border-flame-600 hover:text-flame-600 transition">
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="currentColor" aria-hidden="true"><path d="M23.5 7.2a3 3 0 0 0-2.1-2.1C19.6 4.6 12 4.6 12 4.6s-7.6 0-9.4.5A3 3 0 0 0 .5 7.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-4.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
+          </a>
+          <a aria-label="Instagram" href="https://www.instagram.com/finanflix.ok/" class="h-9 w-9 inline-flex items-center justify-center border border-white/15 hover:border-flame-600 hover:text-flame-600 transition">
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a aria-label="LinkedIn" href="https://www.linkedin.com/company/finanflix/posts/?feedView=all" class="h-9 w-9 inline-flex items-center justify-center border border-white/15 hover:border-flame-600 hover:text-flame-600 transition">
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================ STICKY CTA MOBILE ============================ -->
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-ink-900/95 backdrop-blur border-t border-white/10" style="padding-bottom: max(0.75rem, env(safe-area-inset-bottom));">
+    <a href="https://plataforma.finanflix.com/suscripcion/677d75c405c9c730be7de3ba?type=basic&amp;step=billing&amp;ref=24" class="flex items-center justify-center w-full px-5 py-3.5 text-base font-semibold text-white block-flame">
+      Empezar mi mes gratis
+      <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 ml-2" aria-hidden="true"><path d="M10.293 3.293a1 1 0 0 1 1.414 0l5 5a1 1 0 0 1 0 1.414l-5 5a1 1 0 1 1-1.414-1.414L13.586 10H4a1 1 0 1 1 0-2h9.586l-3.293-3.293a1 1 0 0 1 0-1.414Z"/></svg>
+    </a>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

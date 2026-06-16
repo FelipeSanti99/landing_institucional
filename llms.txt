@@ -1,0 +1,20 @@
+# Finanflix
+
+> Escuela de finanzas e inversión de Latinoamérica. Enseñamos a invertir en crypto, acciones y bonos con método, a través de una suscripción con clases en vivo, programas y comunidad. Equipo formado en Harvard, Chicago Booth, CFA, UCEMA, ITBA, Politecnico di Milano, UBA y Universidad Austral. Desde 2021 en Buenos Aires, Argentina.
+
+## Páginas principales
+
+- [Inicio](https://finanflix.com/): Qué es la suscripción, qué incluye, precios y mes gratis.
+- [Programas avanzados](https://finanflix.com/programas-avanzados): Cohortes premium (Trading, Fundamental, Mercados) fuera de la suscripción, coordinadas por WhatsApp.
+- [Quiénes somos](https://finanflix.com/nosotros): El equipo, misión, visión y formación.
+- [Preguntas frecuentes](https://finanflix.com/faq): Mes gratis, qué incluye, pagos, cancelación y aviso de riesgo.
+
+## Suscripción
+
+- Mensual: AR$42.000 (US$30 referencial). Primer mes gratis. Cancelable cuando quieras.
+- Anual: AR$378.000 (US$270 referencial). Ahorrás 25%, pagás 9 meses y accedés 12.
+- Incluye: 4 clases en vivo por semana, 8 programas iniciales, informes y comunidad de Discord.
+
+## Notas
+
+- Finanflix es educación, no asesoramiento financiero. Crypto y mercados son de alto riesgo.

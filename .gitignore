@@ -1,0 +1,14 @@
+# Config local de herramientas
+.claude/
+
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+
+# Dependencias (si más adelante se agrega build)
+node_modules/

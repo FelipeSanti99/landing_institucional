@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Crawlers de IA permitidos (visibilidad en respuestas de IA / GEO)
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://finanflix.com/sitemap.xml
