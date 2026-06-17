@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0a0a0e" />
 
-  <title>Quiénes somos — Finanflix</title>
-  <meta name="description" content="El equipo detrás de Finanflix: cinco personas con formación en Harvard, Chicago Booth, CFA, UCEMA, ITBA, Politecnico di Milano, UBA y Universidad Austral." />
+  <title>Consulting ICON — Finanflix</title>
+  <meta name="description" content="ICON es el programa de consultoría patrimonial de Finanflix: 12 meses, cupos limitados y por aplicación. Mindset, activos alternativos, consultoría estratégica y cash management para empresarios e inversores." />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
-  <link rel="canonical" href="https://finanflix.com/nosotros.html" />
+  <link rel="canonical" href="https://finanflix.com/consulting.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_AR" />
   <meta property="og:site_name" content="Finanflix" />
-  <meta property="og:title" content="Quiénes somos — Finanflix" />
-  <meta property="og:description" content="El equipo detrás de Finanflix. Formación en Harvard, Chicago Booth, CFA, UCEMA, ITBA, Politecnico di Milano y más." />
-  <meta property="og:url" content="https://finanflix.com/nosotros" />
+  <meta property="og:title" content="Consulting ICON — Finanflix" />
+  <meta property="og:description" content="Consultoría patrimonial de 12 meses para empresarios e inversores. Mindset, activos alternativos, estrategia y cash management. Cupos limitados, por aplicación." />
+  <meta property="og:url" content="https://finanflix.com/consulting.html" />
   <meta property="og:image" content="/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -70,32 +70,6 @@
     html, body { overflow-x: clip; }
     @media (max-width: 767px) { body { padding-bottom: 76px; } }
     h1, h2, h3 { letter-spacing: -0.025em; }
-
-    /* Placeholder de foto: cuadro tipo blueprint con iniciales */
-    .photo-slot {
-      aspect-ratio: 1 / 1;
-      background:
-        linear-gradient(135deg, rgba(91,43,217,0.15) 0%, rgba(255,78,0,0.08) 100%),
-        #15151a;
-      border: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .photo-slot::before {
-      content: "";
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(45deg, rgba(255,255,255,0.025) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.025) 75%),
-        linear-gradient(45deg, rgba(255,255,255,0.025) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.025) 75%);
-      background-size: 16px 16px;
-      background-position: 0 0, 8px 8px;
-      opacity: .8;
-    }
-    .photo-slot > * { position: relative; }
-
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -105,21 +79,13 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "Quiénes somos — Finanflix",
-    "url": "https://finanflix.com/nosotros",
-    "about": {
-      "@type": "Organization",
-      "name": "Finanflix",
-      "foundingDate": "2021",
-      "founders": [
-        { "@type": "Person", "name": "Facundo Zamora", "jobTitle": "CEO" },
-        { "@type": "Person", "name": "Juan Ignacio Murua", "jobTitle": "CFO & COO" },
-        { "@type": "Person", "name": "Benjamin Shekerdemian", "jobTitle": "Presidente Wealth Management" },
-        { "@type": "Person", "name": "Luciano Romero", "jobTitle": "VP Controlling" },
-        { "@type": "Person", "name": "Augusto Novoa", "jobTitle": "CIO" }
-      ]
-    }
+    "@type": "Service",
+    "name": "ICON — Consultoría patrimonial",
+    "serviceType": "Consultoría patrimonial y financiera",
+    "provider": { "@type": "Organization", "name": "Finanflix", "url": "https://finanflix.com" },
+    "areaServed": "Latinoamérica",
+    "description": "Programa de consultoría patrimonial de 12 meses para empresarios e inversores: mindset y toma de decisión, activos alternativos, consultoría estratégica y cash management. Cupos limitados, por aplicación.",
+    "url": "https://finanflix.com/consulting.html"
   }
   </script>
 </head>
@@ -152,8 +118,8 @@
       <ul class="hidden md:flex items-center gap-1 text-sm">
         <li><a href="index.html#suscripcion" class="px-3 py-2 text-white/70 hover:text-white">Suscripción</a></li>
         <li><a href="programas-avanzados.html" class="px-3 py-2 text-white/70 hover:text-white">Programas avanzados</a></li>
-        <li><a href="consulting.html" class="px-3 py-2 text-white/70 hover:text-white">Consulting</a></li>
-        <li><a href="nosotros.html" class="px-3 py-2 text-white" aria-current="page">Quiénes somos</a></li>
+        <li><a href="consulting.html" class="px-3 py-2 text-white" aria-current="page">Consulting</a></li>
+        <li><a href="nosotros.html" class="px-3 py-2 text-white/70 hover:text-white">Quiénes somos</a></li>
         <li><a href="faq.html" class="px-3 py-2 text-white/70 hover:text-white">Preguntas</a></li>
       </ul>
 
@@ -170,8 +136,8 @@
       <div class="px-5 py-4 flex flex-col gap-1" onclick="if(event.target.tagName==='A'){document.getElementById('mobile-menu').classList.add('hidden'); document.querySelector('[aria-controls=mobile-menu]').setAttribute('aria-expanded','false');}">
         <a href="index.html#suscripcion" class="px-3 py-3 hover:bg-white/5">Suscripción</a>
         <a href="programas-avanzados.html" class="px-3 py-3 hover:bg-white/5">Programas avanzados</a>
-        <a href="consulting.html" class="px-3 py-3 hover:bg-white/5">Consulting</a>
-        <a href="nosotros.html" class="px-3 py-3 hover:bg-white/5 text-flame-500">Quiénes somos</a>
+        <a href="consulting.html" class="px-3 py-3 hover:bg-white/5 text-flame-500">Consulting</a>
+        <a href="nosotros.html" class="px-3 py-3 hover:bg-white/5">Quiénes somos</a>
         <a href="faq.html" class="px-3 py-3 hover:bg-white/5">Preguntas</a>
         <a href="https://plataforma.finanflix.com" class="px-3 py-3 hover:bg-white/5">Iniciar sesión</a>
         <a href="https://plataforma.finanflix.com/suscripcion/677d75c405c9c730be7de3ba?type=basic&amp;step=billing&amp;ref=24" class="mt-2 px-4 py-3 text-center font-semibold text-white block-flame">Empezar mi mes gratis</a>
@@ -182,228 +148,128 @@
   <!-- ============================ HERO ============================ -->
   <section class="relative block-violet overflow-hidden">
     <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12 py-20 sm:py-28 lg:py-32">
-      <p class="eyebrow text-white/70">Equipo · desde 2021</p>
+      <p class="eyebrow text-white/70">ICON · Consultoría patrimonial</p>
 
       <h1 class="mt-6 h-display text-white text-[clamp(2.4rem,8.5vw,7rem)]">
-        El equipo<br/>
-        detrás de <span class="text-flame-500">Finanflix.</span>
+        No es un curso.<br/>
+        Es <span class="text-flame-500">consultoría.</span>
       </h1>
 
       <p class="mt-8 max-w-2xl text-white/85 font-body text-lg sm:text-xl leading-relaxed">
-        Cinco personas con formación en Harvard, Chicago Booth, CFA, UCEMA, Politecnico di Milano,
-        ITBA, UBA y Universidad Austral. Toda esa experiencia, vertida en la suscripción.
+        ICON es el programa premium de Finanflix para empresarios e inversores. Doce meses de acompañamiento
+        para transformar cómo pensás, decidís y operás sobre tu dinero y tu negocio. No es la suscripción ni
+        un programa avanzado: es un nivel aparte, con cupos limitados y por aplicación.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row gap-3">
+        <a href="https://icon.finanflix.com" class="inline-flex items-center justify-center px-7 py-4 text-base font-semibold text-white block-flame hover:brightness-110 transition">
+          Aplicar a ICON
+          <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 ml-2" aria-hidden="true"><path d="M10.293 3.293a1 1 0 0 1 1.414 0l5 5a1 1 0 0 1 0 1.414l-5 5a1 1 0 1 1-1.414-1.414L13.586 10H4a1 1 0 1 1 0-2h9.586l-3.293-3.293a1 1 0 0 1 0-1.414Z"/></svg>
+        </a>
+        <a href="#pilares" class="btn-outline-light inline-flex items-center justify-center px-7 py-4 text-base font-semibold text-white">
+          Ver los 4 pilares
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FRASE / DIFERENCIADOR ============================ -->
+  <section class="block-ink relative border-b border-white/10">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12 py-16 sm:py-20">
+      <p class="h-section text-white text-[clamp(1.6rem,4vw,3rem)] max-w-4xl">
+        El patrimonio no se construye con información.
+        Se construye con <span class="text-violet-400">decisiones, ejecución y disciplina.</span>
       </p>
     </div>
   </section>
 
-  <!-- ============================ NUESTRA HISTORIA ============================ -->
-  <section class="block-ink relative">
+  <!-- ============================ LOS 4 PILARES ============================ -->
+  <section id="pilares" class="block-ink relative">
     <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12 py-20 sm:py-28">
-      <div class="grid lg:grid-cols-12 gap-x-12 gap-y-10">
-        <div class="lg:col-span-4">
-          <p class="eyebrow text-flame-600">Por qué existimos</p>
-          <h2 class="mt-5 h-section text-white text-[clamp(2rem,5vw,3.5rem)]">
-            Educación financiera<br/>
-            <span class="text-violet-400">sin humo.</span>
-          </h2>
-        </div>
-
-        <div class="lg:col-span-7 lg:col-start-6 font-body text-white/80 text-lg leading-relaxed space-y-4">
-          <p>
-            Finanflix nació en 2021 cuando notamos que el mundo crypto estaba lleno de gurúes
-            vendiendo señales y poco contenido serio en español.
-          </p>
-          <p>
-            Decidimos enseñar lo mismo que aplicamos cuando gestionamos capital:
-            análisis fundamental, frameworks de riesgo y la disciplina que sostiene una operación en el tiempo.
-          </p>
-          <p>
-            Hoy somos un equipo de cinco personas y más de 5.000 alumnos formados en LATAM.
-            Operamos como una escuela, no como un infoproducto.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ MISIÓN Y VISIÓN ============================ -->
-  <section class="block-violet relative overflow-hidden">
-    <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12 py-20 sm:py-28">
-      <p class="eyebrow text-flame-500">Misión y visión</p>
+      <p class="eyebrow text-flame-600">El sistema</p>
       <h2 class="mt-5 h-display text-white text-[clamp(2.2rem,6vw,4.5rem)]">
-        Hacia dónde<br/>
-        vamos y por qué.
+        Cuatro pilares,<br/>
+        un mismo <span class="text-violet-400">objetivo.</span>
       </h2>
 
-      <div class="mt-12 grid md:grid-cols-2 gap-px bg-white/20">
-        <!-- Misión -->
-        <div class="block-violet p-8 sm:p-10">
-          <div class="flex items-center gap-3">
-            <span class="h-display text-white/40 text-3xl">01</span>
-            <p class="eyebrow text-white">Misión</p>
-          </div>
-          <h3 class="mt-6 h-section text-white text-3xl sm:text-4xl">
-            Democratizar la educación financiera y crypto en Latinoamérica.
-          </h3>
-          <p class="mt-6 font-body text-white/85 text-base sm:text-lg leading-relaxed">
-            Damos a cualquier persona, sin importar su capital de partida, acceso al mismo marco
-            de análisis y disciplina que usamos para gestionar capital.
-            Sin humo, sin gurúes, sin atajos.
+      <div class="mt-14 grid sm:grid-cols-2 gap-px bg-white/10">
+        <article class="block-ink p-8 sm:p-10 flex flex-col">
+          <span class="h-display text-white/30 text-3xl">01</span>
+          <h3 class="mt-5 h-section text-white text-2xl sm:text-3xl">Mindset y toma de decisión</h3>
+          <p class="mt-3 font-body text-white/70 text-base leading-relaxed">
+            Las habilidades psicológicas que separan al empresario inversor que sostiene resultados en el tiempo
+            del que se queda en el intento.
           </p>
-        </div>
-
-        <!-- Visión -->
-        <div class="block-violet p-8 sm:p-10">
-          <div class="flex items-center gap-3">
-            <span class="h-display text-white/40 text-3xl">02</span>
-            <p class="eyebrow text-white">Visión</p>
-          </div>
-          <h3 class="mt-6 h-section text-white text-3xl sm:text-4xl">
-            Ser la escuela de finanzas y crypto de referencia en la región.
-          </h3>
-          <p class="mt-6 font-body text-white/85 text-base sm:text-lg leading-relaxed">
-            Una plataforma donde estudiar finanzas y crypto sea tan natural como aprender un idioma:
-            con un método claro, con comunidad y con profesores que también operan.
+        </article>
+        <article class="block-ink p-8 sm:p-10 flex flex-col">
+          <span class="h-display text-white/30 text-3xl">02</span>
+          <h3 class="mt-5 h-section text-white text-2xl sm:text-3xl">Activos alternativos</h3>
+          <p class="mt-3 font-body text-white/70 text-base leading-relaxed">
+            Crypto, real estate, brokers en el exterior y oportunidades exclusivas que rara vez llegan
+            al inversor retail.
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ EL EQUIPO ============================ -->
-  <section class="block-ink relative border-t border-white/5">
-    <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12 py-20 sm:py-28">
-      <p class="eyebrow text-flame-600">El equipo</p>
-      <h2 class="mt-5 h-display text-white text-[clamp(2.4rem,7vw,5.5rem)]">
-        Cinco personas.<br/>
-        Cinco <span class="text-flame-500">verticales.</span>
-      </h2>
-
-      <!-- Grid de 5 miembros -->
-      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
-
-        <!-- Facundo Zamora -->
-        <article class="flex flex-col">
-          <img src="images/facundo-zamora.jpg" alt="Facundo Zamora, CEO de Finanflix" width="400" height="400" loading="lazy" class="aspect-square w-full object-cover border border-white/10" />
-          <p class="mt-5 eyebrow text-flame-600">CEO · Grupo Finanflix</p>
-          <h3 class="mt-2 h-section text-white text-3xl">Facundo Zamora</h3>
-          <ul class="mt-4 space-y-1.5 text-sm text-white/75 font-body">
-            <li class="flex gap-2"><span class="text-flame-500">▹</span> MBA — Universidad Austral</li>
-            <li class="flex gap-2"><span class="text-flame-500">▹</span> Marketing Lead</li>
-            <li class="flex gap-2"><span class="text-flame-500">▹</span> Crypto Expert</li>
-          </ul>
         </article>
-
-        <!-- Juan Ignacio Murua -->
-        <article class="flex flex-col">
-          <img src="images/juan-murua.jpg" alt="Juan Ignacio Murua, CFO y COO de Finanflix" width="400" height="400" loading="lazy" class="aspect-square w-full object-cover border border-white/10" />
-          <p class="mt-5 eyebrow text-flame-600">CFO &amp; COO · Grupo Finanflix</p>
-          <h3 class="mt-2 h-section text-white text-3xl">Juan Ignacio Murua</h3>
-          <ul class="mt-4 space-y-1.5 text-sm text-white/75 font-body">
-            <li class="flex gap-2"><span class="text-flame-500">▹</span> Economista — UBA (Magna Cum Laude)</li>
-            <li class="flex gap-2"><span class="text-flame-500">▹</span> MBA — Chicago Booth</li>
-            <li class="flex gap-2"><span class="text-flame-500">▹</span> CFA Charterholder</li>
-            <li class="flex gap-2"><span class="text-flame-500">▹</span> Stock Market Lead</li>
-          </ul>
+        <article class="block-ink p-8 sm:p-10 flex flex-col">
+          <span class="h-display text-white/30 text-3xl">03</span>
+          <h3 class="mt-5 h-section text-white text-2xl sm:text-3xl">Consultoría estratégica</h3>
+          <p class="mt-3 font-body text-white/70 text-base leading-relaxed">
+            Un equipo que ya escaló empresas en finanzas, alimentos, diseño, estética, educación, iluminación
+            y más, trabajando sobre tu negocio.
+          </p>
         </article>
-
-        <!-- Benjamin Shekerdemian -->
-        <article class="flex flex-col">
-          <img src="images/benjamin-shekerdemian.jpg" alt="Benjamin Shekerdemian, Presidente de Wealth Management de Finanflix" width="400" height="400" loading="lazy" class="aspect-square w-full object-cover border border-white/10" />
-          <p class="mt-5 eyebrow text-flame-600">Pres. Wealth Management</p>
-          <h3 class="mt-2 h-section text-white text-3xl">Benjamin Shekerdemian</h3>
-          <ul class="mt-4 space-y-1.5 text-sm text-white/75 font-body">
-            <li class="flex gap-2"><span class="text-flame-500">▹</span> Magíster en Finanzas — UCEMA</li>
-            <li class="flex gap-2"><span class="text-flame-500">▹</span> Cash Management Lead</li>
-          </ul>
-        </article>
-
-        <!-- Luciano Romero -->
-        <article class="flex flex-col">
-          <img src="images/luciano-romero.jpg" alt="Luciano Romero, VP Controlling de Finanflix" width="400" height="400" loading="lazy" class="aspect-square w-full object-cover border border-white/10" />
-          <p class="mt-5 eyebrow text-flame-600">VP Controlling · Grupo Finanflix</p>
-          <h3 class="mt-2 h-section text-white text-3xl">Luciano Romero</h3>
-          <ul class="mt-4 space-y-1.5 text-sm text-white/75 font-body">
-            <li class="flex gap-2"><span class="text-flame-500">▹</span> Ingeniero Industrial — ITBA</li>
-            <li class="flex gap-2"><span class="text-flame-500">▹</span> Máster en Finanzas — Politecnico di Milano</li>
-            <li class="flex gap-2"><span class="text-flame-500">▹</span> Controlling Lead · Operations Co-Lead</li>
-          </ul>
-        </article>
-
-        <!-- Augusto Novoa -->
-        <article class="flex flex-col">
-          <img src="images/augusto-novoa.jpg" alt="Augusto Novoa, CIO de Finanflix" width="400" height="400" loading="lazy" class="aspect-square w-full object-cover border border-white/10" />
-          <p class="mt-5 eyebrow text-flame-600">CIO · Grupo Finanflix</p>
-          <h3 class="mt-2 h-section text-white text-3xl">Augusto Novoa</h3>
-          <ul class="mt-4 space-y-1.5 text-sm text-white/75 font-body">
-            <li class="flex gap-2"><span class="text-flame-500">▹</span> Trading &amp; Risk Management Lead</li>
-            <li class="flex gap-2"><span class="text-flame-500">▹</span> Operations Co-Lead</li>
-            <li class="flex gap-2"><span class="text-flame-500">▹</span> Conduce las clases en vivo de mercado</li>
-          </ul>
-        </article>
-
-        <!-- Card de "Sumate al equipo" — opcional, completa los 6 slots del grid en desktop -->
-        <article class="block-violet p-7 flex flex-col justify-between">
-          <div>
-            <p class="eyebrow text-white/70">Estamos creciendo</p>
-            <h3 class="mt-3 h-section text-white text-2xl">Sumate al equipo</h3>
-            <p class="mt-3 font-body text-white/85 text-sm">
-              Buscamos editores, analistas y educadores que nos ayuden a llevar la plataforma al siguiente nivel.
-            </p>
-          </div>
-          <a href="mailto:hola@finanflix.com" class="mt-6 inline-flex items-center gap-2 font-semibold text-white">
-            Escribinos →
-          </a>
+        <article class="block-ink p-8 sm:p-10 flex flex-col">
+          <span class="h-display text-white/30 text-3xl">04</span>
+          <h3 class="mt-5 h-section text-white text-2xl sm:text-3xl">Cash management</h3>
+          <p class="mt-3 font-body text-white/70 text-base leading-relaxed">
+            Optimización del capital de trabajo, estructura financiera del negocio y gestión de liquidez.
+          </p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ============================ FORMACIÓN / INSTITUCIONES ============================ -->
+  <!-- ============================ PARA QUIÉN + FORMATO ============================ -->
   <section class="block-flame relative overflow-hidden">
     <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12 py-20 sm:py-28">
-      <p class="eyebrow text-white/80">Instituciones</p>
-      <h2 class="mt-5 h-display text-white text-[clamp(2.4rem,7vw,5.5rem)]">
-        Dónde se formó<br/>
-        el <span class="text-violet-600">equipo.</span>
-      </h2>
-      <p class="mt-8 max-w-2xl font-body text-white/95 text-lg">
-        No es decoración curricular. Aplicamos los frameworks de cada una de estas escuelas
-        en cómo enseñamos y operamos.
-      </p>
+      <div class="grid lg:grid-cols-12 gap-x-12 gap-y-12 items-start">
+        <div class="lg:col-span-6">
+          <p class="eyebrow text-white/85">Para quién es</p>
+          <h2 class="mt-5 h-display text-white text-[clamp(2rem,5.5vw,4rem)]">
+            Empresarios<br/>
+            que ya <span class="text-violet-600">facturan</span><br/>
+            y quieren escalar.
+          </h2>
+          <p class="mt-8 font-body text-white/95 text-lg leading-relaxed max-w-xl">
+            ICON es para quienes buscan elevar sus habilidades psicológicas y financieras, dominar los activos
+            alternativos y potenciar su negocio. No es un punto de partida: es un salto de nivel.
+          </p>
+        </div>
 
-      <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/20">
-        <div class="block-flame p-6 sm:p-8">
-          <p class="h-display text-white text-xl sm:text-2xl">Harvard</p>
-          <p class="mt-2 text-xs text-white/80 uppercase tracking-widest">Executive Education</p>
-        </div>
-        <div class="block-flame p-6 sm:p-8">
-          <p class="h-display text-white text-xl sm:text-2xl">Chicago Booth</p>
-          <p class="mt-2 text-xs text-white/80 uppercase tracking-widest">School of Business</p>
-        </div>
-        <div class="block-flame p-6 sm:p-8">
-          <p class="h-display text-white text-xl sm:text-2xl">CFA Institute</p>
-          <p class="mt-2 text-xs text-white/80 uppercase tracking-widest">Charterholder</p>
-        </div>
-        <div class="block-flame p-6 sm:p-8">
-          <p class="h-display text-white text-xl sm:text-2xl">UCEMA</p>
-          <p class="mt-2 text-xs text-white/80 uppercase tracking-widest">Magíster en Finanzas</p>
-        </div>
-        <div class="block-flame p-6 sm:p-8">
-          <p class="h-display text-white text-xl sm:text-2xl">U. Austral</p>
-          <p class="mt-2 text-xs text-white/80 uppercase tracking-widest">Executive MBA</p>
-        </div>
-        <div class="block-flame p-6 sm:p-8">
-          <p class="h-display text-white text-lg sm:text-2xl">Politecnico Milano</p>
-          <p class="mt-2 text-xs text-white/80 uppercase tracking-widest">School of Management</p>
-        </div>
-        <div class="block-flame p-6 sm:p-8">
-          <p class="h-display text-white text-xl sm:text-2xl">ITBA</p>
-          <p class="mt-2 text-xs text-white/80 uppercase tracking-widest">Ingeniería Industrial</p>
-        </div>
-        <div class="block-flame p-6 sm:p-8">
-          <p class="h-display text-white text-xl sm:text-2xl">UBA</p>
-          <p class="mt-2 text-xs text-white/80 uppercase tracking-widest">Cs. Económicas</p>
+        <div class="lg:col-span-6">
+          <div class="grid sm:grid-cols-3 gap-px bg-white/25 border-t border-white/25">
+            <div class="block-flame p-6">
+              <p class="h-display text-white text-4xl">12</p>
+              <p class="mt-2 text-xs text-white/85 uppercase tracking-widest">meses de acompañamiento</p>
+            </div>
+            <div class="block-flame p-6">
+              <p class="h-display text-white text-4xl">Cupos</p>
+              <p class="mt-2 text-xs text-white/85 uppercase tracking-widest">limitados por cohorte</p>
+            </div>
+            <div class="block-flame p-6">
+              <p class="h-display text-white text-4xl">Aplicás</p>
+              <p class="mt-2 text-xs text-white/85 uppercase tracking-widest">el ingreso es por selección</p>
+            </div>
+          </div>
+
+          <div class="mt-10 flex flex-col sm:flex-row gap-3">
+            <a href="https://icon.finanflix.com" class="inline-flex items-center justify-center px-7 py-4 text-base font-semibold text-flame-600 bg-white hover:bg-white/90 transition">
+              Aplicar a ICON
+              <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 ml-2" aria-hidden="true"><path d="M10.293 3.293a1 1 0 0 1 1.414 0l5 5a1 1 0 0 1 0 1.414l-5 5a1 1 0 1 1-1.414-1.414L13.586 10H4a1 1 0 1 1 0-2h9.586l-3.293-3.293a1 1 0 0 1 0-1.414Z"/></svg>
+            </a>
+            <a href="https://www.finanflix.com/whatsapp" class="btn-outline-light inline-flex items-center justify-center px-7 py-4 text-base font-semibold text-white">
+              Consultar por WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -477,8 +343,8 @@
 
   <!-- ============================ STICKY CTA MOBILE ============================ -->
   <div class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-ink-900/95 backdrop-blur border-t border-white/10" style="padding-bottom: max(0.75rem, env(safe-area-inset-bottom));">
-    <a href="https://plataforma.finanflix.com/suscripcion/677d75c405c9c730be7de3ba?type=basic&amp;step=billing&amp;ref=24" class="flex items-center justify-center w-full px-5 py-3.5 text-base font-semibold text-white block-flame">
-      Empezar mi mes gratis
+    <a href="https://icon.finanflix.com" class="flex items-center justify-center w-full px-5 py-3.5 text-base font-semibold text-white block-flame">
+      Aplicar a ICON
       <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 ml-2" aria-hidden="true"><path d="M10.293 3.293a1 1 0 0 1 1.414 0l5 5a1 1 0 0 1 0 1.414l-5 5a1 1 0 1 1-1.414-1.414L13.586 10H4a1 1 0 1 1 0-2h9.586l-3.293-3.293a1 1 0 0 1 0-1.414Z"/></svg>
     </a>
   </div>
